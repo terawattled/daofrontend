@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { CardsComponent } from './cards.component';
+import { SettingsComponent } from './settings.component';
 
 // Forms Component
 import { FormsComponent } from './forms.component';
@@ -17,7 +17,7 @@ import { TabsComponent } from './tabs.component';
 
 // Carousel Component
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { CarouselsComponent } from './carousels.component';
+import { SubmitProposalComponent } from './submit-proposal.component';
 
 // Collapse Component
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -28,11 +28,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Pagination Component
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { PopoversComponent } from './popovers.component';
+import { SubmitVotingComponent } from './submit-voting.component';
 
 // Popover Component
 import { PopoverModule } from 'ngx-bootstrap/popover';
-import { PaginationsComponent } from './paginations.component';
+import { ProposalStatsComponent } from './proposal-stats.component';
 
 // Progress Component
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
@@ -45,6 +45,10 @@ import { TooltipsComponent } from './tooltips.component';
 
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
+
+
+
+
 
 @NgModule({
   imports: [
@@ -61,17 +65,19 @@ import { BaseRoutingModule } from './base-routing.module';
     TooltipModule.forRoot()
   ],
   declarations: [
-    CardsComponent,
+    SettingsComponent,
     FormsComponent,
     SwitchesComponent,
     TablesComponent,
     TabsComponent,
-    CarouselsComponent,
+    SubmitProposalComponent,
     CollapsesComponent,
-    PaginationsComponent,
-    PopoversComponent,
+    ProposalStatsComponent,
+    SubmitVotingComponent,
     ProgressComponent,
-    TooltipsComponent
+    TooltipsComponent,
+
+
   ]
 })
 export class BaseModule { }

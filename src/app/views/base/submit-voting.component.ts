@@ -3,9 +3,9 @@ import {DomSanitizer} from '@angular/platform-browser';
 
 
 @Component({
-  templateUrl: 'popovers.component.html'
+  templateUrl: 'submit-voting.component.html'
 })
-export class PopoversComponent {
+export class SubmitVotingComponent {
 
   constructor(sanitizer: DomSanitizer) {
     this.html = sanitizer.sanitize(SecurityContext.HTML, this.html);
