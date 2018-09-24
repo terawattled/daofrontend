@@ -12,7 +12,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" id="proposal-number" name="proposal-number" class="form-control" placeholder="Proposal Number">
+                <input [(ngModel)]="votingData.proposalNumber" type="text" id="proposal-number" name="proposal-number" class="form-control" placeholder="Proposal Number">
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" id="submit-proposal" name="submit-proposal" class="form-control" placeholder="Submit Proposal i.e(true or false)">
+                <input [(ngModel)]="votingData.proposalSubmit" type="text" id="submit-proposal" name="submit-proposal" class="form-control" placeholder="Submit Proposal i.e(true or false)">
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
         </form>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button (click)="submitVote()" type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
         <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
       </div>
     </div>

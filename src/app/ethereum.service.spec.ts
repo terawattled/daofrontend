@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EthcontractService } from './ethcontract.service';
+import { EthereumService } from './ethereum.service';
 
-describe('EthcontractService', () => {
+describe('EthereumService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: EthcontractService = TestBed.get(EthcontractService);
+    const service: EthereumService = TestBed.get(EthereumService);
     expect(service).toBeTruthy();
   });
 });

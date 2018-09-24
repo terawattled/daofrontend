@@ -6,6 +6,7 @@ import {UsersApi} from '../../shared/sdk/services/custom';
 import {LoopBackConfig} from '../../shared/sdk';
 import {WEB3} from '../../web3.token';
 import * as Web3 from 'web3';
+import {EthereumService} from '../../ethereum.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,9 +22,10 @@ export class LoginComponent implements OnInit {
   };
 
   constructor(
-              private _auth: ApiService,
-              private _router: Router,
-              private usersApi: UsersApi
+    private _auth: ApiService,
+    private _router: Router,
+    private usersApi: UsersApi,
+    private ethereumService: EthereumService
   ) {
     LoopBackConfig.setBaseURL('http://localhost:3000');
     LoopBackConfig.setApiVersion('api');
@@ -31,8 +33,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.web3.eth.net.getId()
-    //   .then(id => console.log(`You are connected on ${this.getNet(id)}`));
+    this.ethereumService.getAccounts().subscribe(res => {
+      console.log(res);
+    });
   }
 
   private getNet(id: number): string {

@@ -9,9 +9,10 @@ import {PerfectScrollbarConfigInterface} from 'ngx-perfect-scrollbar';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {ToastrModule} from 'ngx-toastr';
 import {AppComponent} from './app.component';
 
 // Import containers
@@ -47,6 +48,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthGuard} from './auth.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
 import {SDKBrowserModule} from './shared/sdk';
+import {WEB3} from './web3.token';
+import {EthereumModule} from './ethereum/ethereum.module';
 
 @NgModule({
   imports: [
@@ -65,7 +68,8 @@ import {SDKBrowserModule} from './shared/sdk';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added,
-    SDKBrowserModule.forRoot()
+    SDKBrowserModule.forRoot(),
+    EthereumModule
   ],
   declarations: [
     AppComponent,

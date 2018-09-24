@@ -1,5 +1,6 @@
 import {Component, SecurityContext} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+import {EthereumService} from '../../ethereum.service';
 
 
 @Component({
@@ -7,11 +8,22 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class SubmitVotingComponent {
 
-  constructor(sanitizer: DomSanitizer) {
-    this.html = sanitizer.sanitize(SecurityContext.HTML, this.html);
+  votingData = {
+    proposalNumber: '',
+    proposalSubmit: ''
+  };
+
+  constructor(private ethereumService: EthereumService) {
+
   }
 
-  title: string = 'Welcome word';
-  content: string = 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.';
-  html: string = `<span class="btn btn-warning">Never trust not sanitized <code>HTML</code>!!!</span>`;
+  submitVote() {
+    this.ethereumService.getAccounts().subscribe(res => {
+      console.log(this.votingData);
+      console.log(res);
+    });
+    this.ethereumService.getUserBalance().subscribe(res => {
+      console.log(res);
+    });
+  }
 }
