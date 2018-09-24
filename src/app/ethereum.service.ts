@@ -2,7 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {WEB3} from './web3.token';
 import {Observable} from 'rxjs';
 import {fromPromise} from 'rxjs/internal-compatibility';
-import Web3 from '../../../../../node_modules/web3';
+import Web3 from 'web3';
 
 declare let require: any;
 const tokenAbi = require('./abi.json');
@@ -34,9 +34,22 @@ export class EthereumService {
     return fromPromise(this._tokenContract);
   }
 
-  public  getUserBalance(): Observable<number> {
+  public debatingPeriodInMinutes(): Observable<number> {
     return fromPromise(this._tokenContract.methods.debatingPeriodInMinutes().call({
       from: this.account,
+    }));
+  }
+
+  public submitVote(proposalNumber: string, submitProposal: string): Observable<any> {
+    return fromPromise(this._tokenContract.methods.vote(proposalNumber, true).send({
+      from: this.account
+    }));
+  }
+
+  public newProposal(beneficiary: string, weiAmount: number, jobDescription: string): Observable<any> {
+
+    return fromPromise(this._tokenContract.methods.newProposal(beneficiary, weiAmount, jobDescription, 0xb1050da5).send({
+      from: this.account
     }));
   }
 

@@ -12,7 +12,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" id="beneficiary-address" name="beneficiary-address" class="form-control" placeholder="Beneficiary (Must be and address)">
+                <input [(ngModel)]="newProposal.beneficiary_address" type="text" id="beneficiary_address" name="beneficiary_address" class="form-control" placeholder="Beneficiary (Must be and address)">
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" id="wei-amount" name="wei-amount" class="form-control" placeholder="Wei Amount (Amount in wei)">
+                <input [(ngModel)]="newProposal.wei_amount" type="text" id="wei_amount" name="wei_amount" class="form-control" placeholder="Wei Amount (Amount in wei)">
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <textarea id="job-description" name="job-description" class="form-control" cols="30" rows="5" placeholder="Job Description"></textarea>
+                <textarea [(ngModel)]="newProposal.job_description" id="job_description" name="job_description" class="form-control" cols="30" rows="5" placeholder="Job Description"></textarea>
                 <!--<input type="textarea" id="job-description" name="job-description" class="form-control" placeholder="Job Description">-->
               </div>
             </div>
@@ -43,7 +43,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" id="transaction-bytecode" name="transaction-bytecode" class="form-control" placeholder="Transaction Bytecode">
+                <input  [(ngModel)]="newProposal.transaction_bytecode" value="0xb1050da5" type="text" id="transaction_bytecode" name="transaction_bytecode" class="form-control" placeholder="0xb1050da5">
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@
         </form>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button (click)="submitProposal()" type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
         <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
       </div>
     </div>

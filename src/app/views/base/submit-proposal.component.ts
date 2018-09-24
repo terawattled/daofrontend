@@ -1,33 +1,28 @@
-import { Component } from '@angular/core';
-import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import {Component} from '@angular/core';
+import {EthereumService} from '../../ethereum.service';
 
 @Component({
-  templateUrl: 'submit-proposal.component.html',   providers: [
-    { provide: CarouselConfig, useValue: { interval: 1500, noPause: true } }
-  ]
+  templateUrl: 'submit-proposal.component.html'
 })
 export class SubmitProposalComponent {
 
-  myInterval: number = 6000;
-  slides: any[] = [];
-  activeSlideIndex: number = 0;
-  noWrapSlides: boolean = false;
+  newProposal = {
+    beneficiary_address: '',
+    wei_amount: 0,
+    job_description: '',
+    transaction_bytecode: ''
+  };
 
-  constructor() {
-    for (let i = 0; i < 4; i++) {
-      this.addSlide();
-    }
+  constructor(private ethereumService: EthereumService) {
   }
 
-  addSlide(): void {
-    this.slides.push({
-      image: `https://loremflickr.com/900/500/sailing?random=${this.slides.length % 8 + 1}/`
+
+  submitProposal() {
+    this.ethereumService.newProposal(
+      this.newProposal.beneficiary_address,
+      this.newProposal.wei_amount,
+      this.newProposal.job_description).subscribe(res => {
+        console.log(res);
     });
   }
-
-  removeSlide(index?: number): void {
-    const toRemove = index ? index : this.activeSlideIndex;
-    this.slides.splice(toRemove, 1);
-  }
-
 }

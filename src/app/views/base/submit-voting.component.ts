@@ -18,12 +18,16 @@ export class SubmitVotingComponent {
   }
 
   submitVote() {
-    this.ethereumService.getAccounts().subscribe(res => {
-      console.log(this.votingData);
-      console.log(res);
-    });
-    this.ethereumService.getUserBalance().subscribe(res => {
-      console.log(res);
-    });
+    this.ethereumService.submitVote(this.votingData.proposalNumber, this.votingData.proposalSubmit)
+      .subscribe(res => {
+       // console.log(res);
+      });
+    // this.ethereumService.getAccounts().subscribe(res => {
+    //   console.log(this.votingData);
+    //   console.log(res);
+    // });
+    // this.ethereumService.debatingPeriodInMinutes().subscribe(res => {
+    //   console.log(res);
+    // });
   }
 }
