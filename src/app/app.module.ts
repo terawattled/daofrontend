@@ -46,6 +46,7 @@ import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthGuard} from './auth.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
+import {SDKBrowserModule} from './shared/sdk';
 
 @NgModule({
   imports: [
@@ -63,7 +64,8 @@ import {TokenInterceptorService} from './token-interceptor.service';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added,
+    SDKBrowserModule.forRoot()
   ],
   declarations: [
     AppComponent,
