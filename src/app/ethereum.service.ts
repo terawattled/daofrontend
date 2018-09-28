@@ -15,7 +15,7 @@ export class EthereumService {
 
   private readonly _tokenContract: any;
   private _tokenContractAddress = '0xbcE84C0f1b780D2a632E833dAf760b597F7767fc';
-  account = '0x2Ef01B493d2E9736Ad94dE246e3D3c9C8790dB1c';
+  account = this.web3.currentProvider.;
 
   constructor(@Inject(WEB3) private web3: Web3) {
     this._tokenContract = new this.web3.eth.Contract(tokenAbi, this._tokenContractAddress, {
