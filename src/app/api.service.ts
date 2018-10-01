@@ -9,7 +9,7 @@ import {environment} from '../environments/environment';
 })
 export class ApiService {
 
-  private url = environment.API_URL;
+  private url = environment.SERVER_API_URL;
 
   constructor(private http: HttpClient, private _router: Router) {
   }

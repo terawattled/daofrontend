@@ -7,6 +7,7 @@ import {LoopBackConfig} from '../../shared/sdk';
 import {WEB3} from '../../web3.token';
 import * as Web3 from 'web3';
 import {EthereumService} from '../../ethereum.service';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +28,11 @@ export class LoginComponent implements OnInit {
     private usersApi: UsersApi,
     private ethereumService: EthereumService
   ) {
-    LoopBackConfig.setBaseURL('http://localhost:3000');
+    if (environment.production) {
+      LoopBackConfig.setBaseURL('http://terawattdao.xyz:3000');
+    } else {
+      LoopBackConfig.setBaseURL('http://localhost:3000');
+    }
     LoopBackConfig.setApiVersion('api');
 
   }
