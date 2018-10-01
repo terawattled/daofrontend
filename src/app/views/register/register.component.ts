@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {Users} from '../../shared/sdk/models';
 import {LoopBackConfig, UsersApi} from '../../shared/sdk';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,12 +19,16 @@ export class RegisterComponent {
   };
 
   constructor(private _auth: ApiService, private _router: Router, private _toastr: ToastrService, private usersApi: UsersApi) {
-    LoopBackConfig.setBaseURL('http://localhost:3000');
+    if (environment.production) {
+      LoopBackConfig.setBaseURL('http://terawattdao.xyz:3000');
+    } else {
+      LoopBackConfig.setBaseURL('http://localhost:3000');
+    }
     LoopBackConfig.setApiVersion('api');
   }
 
   // Start making API calls right away
-   signup(): void {
+  signup(): void {
     this.usersApi.create(this.registerUserData).subscribe((user: Users) => {
       console.log(user);
       // localStorage.setItem('token', user.);

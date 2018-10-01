@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000/api'
+  API_URL: 'http://localhost:3000/api',
+  SERVER_API_URL: 'http://terawattdao.xyz:3000/api'
 };
