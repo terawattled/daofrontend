@@ -1,6 +1,6 @@
 import {Component, SecurityContext} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {EthereumService} from '../../ethereum.service';
+import {EthereumService} from '../../../ethereum.service';
 
 
 @Component({

@@ -1,17 +1,18 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {SettingsComponent} from './settings.component';
-import {FormsComponent} from './forms.component';
-import {SwitchesComponent} from './switches.component';
-import {TablesComponent} from './tables.component';
-import {TabsComponent} from './tabs.component';
-import {SubmitProposalComponent} from './submit-proposal.component';
-import {CollapsesComponent} from './collapses.component';
-import {ProposalStatsComponent} from './proposal-stats.component';
-import {SubmitVotingComponent} from './submit-voting.component';
-import {ProgressComponent} from './progress.component';
-import {TooltipsComponent} from './tooltips.component';
+import {SettingsComponent} from './settings/settings.component';
+import {FormsComponent} from './forms/forms.component';
+import {SwitchesComponent} from './switches/switches.component';
+import {TablesComponent} from './tables/tables.component';
+import {TabsComponent} from './tabs/tabs.component';
+import {SubmitProposalComponent} from './submit-proposal/submit-proposal.component';
+import {CollapsesComponent} from './collapses/collapses.component';
+import {ProposalStatsComponent} from './proposal-stats/proposal-stats.component';
+import {SubmitVotingComponent} from './submit-voting/submit-voting.component';
+import {ProgressComponent} from './progress/progress.component';
+import {TooltipsComponent} from './tooltips/tooltips.component';
+import {SubmitProposalInEthComponent} from './submit-proposal-in-eth/submit-proposal-in-eth.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,13 @@ const routes: Routes = [
         component: SubmitProposalComponent,
         data: {
           title: 'Submit Proposals'
+        }
+      },
+      {
+        path: 'submit-proposal-in-eth/submit-proposal-in-eth',
+        component: SubmitProposalInEthComponent,
+        data: {
+          title: 'Submit Proposals In Eth'
         }
       },
       {

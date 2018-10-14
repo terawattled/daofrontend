@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <strong>Submit New Proposal In Ether</strong>
+      </div>
+      <div class="card-body">
+        <form action="" method="post" class="form-horizontal">
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input [(ngModel)]="newProposalInEth.beneficiary_address"  type="text" id="beneficiary_address" name="beneficiary_address" class="form-control" placeholder="Beneficiary (Must be and address)">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input [(ngModel)]="newProposalInEth.ether_amount" type="text" id="ether_amount" name="ether_amount" class="form-control" placeholder="Either Amount (Amount in Either)">
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <textarea [(ngModel)]="newProposalInEth.job_description" id="job_description" name="job_description" class="form-control" cols="30" rows="5" placeholder="Job Description"></textarea>
+                <!--<input type="textarea" id="job-description" name="job-description" class="form-control" placeholder="Job Description">-->
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+      <div class="card-footer">
+        <button (click)="submitProposalInEth()" type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
+        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+      </div>
+    </div>
+  </div>
+
+</div>

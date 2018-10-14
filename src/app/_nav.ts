@@ -29,14 +29,19 @@ export const navItems = [
     icon: 'icon-badge',
     children: [
       {
-        name: 'Submit Proposal',
+        name: 'Start Proposal',
         url: '/base/submit-proposal',
-        icon: 'icon-puzzle'
+        icon: 'icon-wallet'
+      },
+      {
+        name: 'Start Proposal In Eth',
+        url: '/base/submit-proposal-in-eth/submit-proposal-in-eth',
+        icon: 'icon-direction'
       },
       {
         name: 'Proposal Stats',
         url: '/base/proposal-stats',
-        icon: 'icon-puzzle'
+        icon: 'icon-speech'
       }
     ]
   },
