@@ -71,6 +71,12 @@ export class EthereumService implements OnInit {
     }));
   }
 
+  public getProposals(proposalNumber: number): Observable<number> {
+    return fromPromise(this._tokenContract.methods.proposals(proposalNumber).call({
+      from: this.mainAccount,
+    }));
+  }
+
   public getMinimumQuorum(): Observable<number> {
     return fromPromise(this._tokenContract.methods.minimumQuorum().call({
       from: this.mainAccount,
