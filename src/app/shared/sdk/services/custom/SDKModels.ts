@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
 import { Users } from '../../models/Users';
+import { Transactions } from '../../models/Transactions';
 
 export interface Models { [name: string]: any }
 
@@ -11,6 +12,7 @@ export class SDKModels {
   private models: Models = {
     User: User,
     Users: Users,
+    Transactions: Transactions,
     
   };
 

@@ -46,6 +46,7 @@ import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { UserApi } from './services/custom/User';
 import { UsersApi } from './services/custom/Users';
+import { TransactionsApi } from './services/custom/Transactions';
 /**
 * @module SDKBrowserModule
 * @description
@@ -76,6 +77,7 @@ export class SDKBrowserModule {
         SDKModels,
         UserApi,
         UsersApi,
+        TransactionsApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

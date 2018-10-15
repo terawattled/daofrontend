@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  Transactions
+} from '../index';
 
 declare var Object: any;
 export interface UsersInterface {
@@ -10,6 +13,7 @@ export interface UsersInterface {
   "id"?: any;
   "password"?: string;
   accessTokens?: any[];
+  transactions?: Transactions[];
 }
 
 export class Users implements UsersInterface {
@@ -21,6 +25,7 @@ export class Users implements UsersInterface {
   "id": any;
   "password": string;
   accessTokens: any[];
+  transactions: Transactions[];
   constructor(data?: UsersInterface) {
     Object.assign(this, data);
   }
@@ -88,6 +93,14 @@ export class Users implements UsersInterface {
           name: 'accessTokens',
           type: 'any[]',
           model: '',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'userId'
+        },
+        transactions: {
+          name: 'transactions',
+          type: 'Transactions[]',
+          model: 'Transactions',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'userId'
