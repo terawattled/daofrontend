@@ -9,53 +9,31 @@
         <table class="table table-bordered table-striped table-sm">
           <thead>
           <tr>
-            <th>Transaction Number</th>
-            <th>Date registered</th>
-            <th>Role</th>
-            <th>Status</th>
+            <th>Recipient Address</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Min Execution Date</th>
+            <th>Executed</th>
+            <th>Proposal Passed</th>
+            <th>Number Of Votes</th>
+            <th>Proposal Hash</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Vishnu Serghei</td>
-            <td>2012/01/01</td>
-            <td>Member</td>
-            <td>
-              <span class="badge badge-success">Active</span>
-            </td>
+          <tr  *ngFor="let hero of heroes">
+            <td>0x2ef01b493d2e9736ad94de246e3d3c9c8790db1c</td>
+            <td>20</td>
+            <td>this is a job</td>
+            <td>1537761396</td>
+            <td>false</td>
+            <td>false</td>
+            <td>0</td>
+            <td>0xf8d3a0ba580fff08f28c24dbb9ddd9390c1de4ccfe7def328bb33c2d28b892ba</td>
+            <!--<td>-->
+              <!--<span class="badge badge-success">Active</span>-->
+            <!--</td>-->
           </tr>
-          <tr>
-            <td>Zbyněk Phoibos</td>
-            <td>2012/02/01</td>
-            <td>Staff</td>
-            <td>
-              <span class="badge badge-danger">Banned</span>
-            </td>
-          </tr>
-          <tr>
-            <td>Einar Randall</td>
-            <td>2012/02/01</td>
-            <td>Admin</td>
-            <td>
-              <span class="badge badge-secondary">Inactive</span>
-            </td>
-          </tr>
-          <tr>
-            <td>Félix Troels</td>
-            <td>2012/03/01</td>
-            <td>Member</td>
-            <td>
-              <span class="badge badge-warning">Pending</span>
-            </td>
-          </tr>
-          <tr>
-            <td>Aulus Agmundr</td>
-            <td>2012/01/21</td>
-            <td>Staff</td>
-            <td>
-              <span class="badge badge-success">Active</span>
-            </td>
-          </tr>
+
           </tbody>
         </table>
         <nav>

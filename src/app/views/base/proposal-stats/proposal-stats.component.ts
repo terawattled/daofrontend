@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
   templateUrl: 'proposal-stats.component.html',
 })
 export class ProposalStatsComponent {
-
+  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
   constructor() {
   }
 
