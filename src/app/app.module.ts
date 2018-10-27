@@ -50,6 +50,8 @@ import {TokenInterceptorService} from './token-interceptor.service';
 import {SDKBrowserModule} from './shared/sdk';
 import {WEB3} from './web3.token';
 import {EthereumModule} from './ethereum/ethereum.module';
+import {NotificationsModule} from './views/notifications/notifications.module';
+import {NotificationsRoutingModule} from './views/notifications/notifications-routing.module';
 
 @NgModule({
   imports: [
@@ -69,7 +71,9 @@ import {EthereumModule} from './ethereum/ethereum.module';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added,
     SDKBrowserModule.forRoot(),
-    EthereumModule
+    EthereumModule,
+    NotificationsModule,
+    NotificationsRoutingModule
   ],
   declarations: [
     AppComponent,

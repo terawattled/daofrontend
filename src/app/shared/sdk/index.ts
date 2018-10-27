@@ -47,6 +47,8 @@ import { StorageBrowser } from './storage/storage.browser';
 import { UserApi } from './services/custom/User';
 import { UsersApi } from './services/custom/Users';
 import { TransactionsApi } from './services/custom/Transactions';
+import { EmailApi } from './services/custom/Email';
+import { EmailsApi } from './services/custom/Emails';
 /**
 * @module SDKBrowserModule
 * @description
@@ -78,6 +80,8 @@ export class SDKBrowserModule {
         UserApi,
         UsersApi,
         TransactionsApi,
+        EmailApi,
+        EmailsApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

@@ -3,8 +3,11 @@ import {ApiService} from '../../api.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 import {Users} from '../../shared/sdk/models';
-import {LoopBackConfig, UsersApi} from '../../shared/sdk';
+import {EmailApi, EmailsApi, LoopBackConfig, UsersApi} from '../../shared/sdk';
 import {environment} from '../../../environments/environment';
+
+declare var require;
+const jwt = require('jsonwebtoken');
 
 @Component({
   selector: 'app-dashboard',
@@ -18,7 +21,11 @@ export class RegisterComponent {
     address: ''
   };
 
-  constructor(private _auth: ApiService, private _router: Router, private _toastr: ToastrService, private usersApi: UsersApi) {
+  constructor(private _auth: ApiService,
+              private _router: Router,
+              private _toastr: ToastrService,
+              private usersApi: UsersApi,
+              private emailsApi: EmailsApi) {
     if (environment.production) {
       LoopBackConfig.setBaseURL('http://terawattdao.xyz:3000');
     } else {
@@ -30,9 +37,12 @@ export class RegisterComponent {
   // Start making API calls right away
   signup(): void {
     this.usersApi.create(this.registerUserData).subscribe((user: Users) => {
-      console.log(user);
+      this.usersApi.verify(user.id).subscribe(res => {
+        console.log(res);
+      });
+      // console.log(user);
       // localStorage.setItem('token', user.);
-      this._router.navigate(['/dashboard']);
+      // this._router.navigate(['/dashboard']);
       this._toastr.success(user.email, 'Toastr fun!');
     });
   }
