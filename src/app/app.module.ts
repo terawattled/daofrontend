@@ -12,7 +12,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {ToastrModule} from 'ngx-toastr';
 import {AppComponent} from './app.component';
 
 // Import containers
@@ -52,6 +51,7 @@ import {WEB3} from './web3.token';
 import {EthereumModule} from './ethereum/ethereum.module';
 import {NotificationsModule} from './views/notifications/notifications.module';
 import {NotificationsRoutingModule} from './views/notifications/notifications-routing.module';
+import {ToasterService} from './toaster.service';
 
 @NgModule({
   imports: [
@@ -69,7 +69,6 @@ import {NotificationsRoutingModule} from './views/notifications/notifications-ro
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added,
     SDKBrowserModule.forRoot(),
     EthereumModule,
     NotificationsModule,
@@ -92,7 +91,7 @@ import {NotificationsRoutingModule} from './views/notifications/notifications-ro
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    }, ApiService, AuthGuard],
+    }, ApiService, AuthGuard, ToasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -3,7 +3,7 @@ import {EthereumService} from '../../../ethereum.service';
 import { saveAs } from 'file-saver';
 import {environment} from '../../../../environments/environment';
 import {LoopBackConfig, Transactions, TransactionsApi} from '../../../shared/sdk';
-import {ToastrService} from 'ngx-toastr';
+
 
 
 @Component({
@@ -21,7 +21,7 @@ export class SubmitProposalInEthComponent implements OnInit {
   };
 
 
-  constructor(private ethereumService: EthereumService, private transactionsApi: TransactionsApi, private _toastr: ToastrService) {
+  constructor(private ethereumService: EthereumService, private transactionsApi: TransactionsApi) {
     if (environment.production) {
       LoopBackConfig.setBaseURL('http://terawattdao.xyz:3000');
     } else {
@@ -43,7 +43,7 @@ export class SubmitProposalInEthComponent implements OnInit {
       // const blob = new Blob([JSON.stringify(res)], {type : 'application/json'});
       // saveAs(blob, 'abc.json');
       this.transactionsApi.create(res).subscribe((transaction: Transactions) => {
-        this._toastr.success(transaction.userId, 'Transaction complete');
+       // this._toastr.success(transaction.userId, 'Transaction complete');
       });
     });
   }

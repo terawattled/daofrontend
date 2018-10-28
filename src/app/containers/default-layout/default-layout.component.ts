@@ -1,7 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {navItems} from './../../_nav';
-import {ApiService} from '../../api.service';
-import {AccessToken} from '../../shared/sdk/models';
 import {UsersApi} from '../../shared/sdk/services/custom';
 import {Router} from '@angular/router';
 

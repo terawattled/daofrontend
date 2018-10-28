@@ -1,3 +1,4 @@
+
 <div class="app-body">
   <main class="main d-flex align-items-center">
     <div class="container">
@@ -24,7 +25,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-map"></i></span>
                   </div>
-                  <textarea name="address" id="address" placeholder="Mailing Address" cols="30" rows="5"></textarea>
+                  <textarea [(ngModel)]="registerUserData.address" name="address" id="address" placeholder="Mailing Address" cols="30" rows="5"></textarea>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
