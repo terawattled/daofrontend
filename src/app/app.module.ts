@@ -47,7 +47,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthGuard} from './auth.guard';
 import {TokenInterceptorService} from './token-interceptor.service';
 import {SDKBrowserModule} from './shared/sdk';
-import {WEB3} from './web3.token';
 import {EthereumModule} from './ethereum/ethereum.module';
 import {NotificationsModule} from './views/notifications/notifications.module';
 import {NotificationsRoutingModule} from './views/notifications/notifications-routing.module';
