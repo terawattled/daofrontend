@@ -58,19 +58,12 @@ export class LoginComponent implements OnInit {
     return networks[id];
   }
 
-  // Start making API calls right away
-  private signup(): void {
-    this.usersApi.create(this.loginUserData).subscribe((user: Users) => this.signin());
-  }
-
   // Built-in LoopBack Authentication and Typings like Account and TokenInterface
   signin(): void {
-
     this.usersApi.login(this.loginUserData).subscribe((token: AccessToken) => {
-      console.log(token);
         localStorage.setItem('token', token.id);
         this._router.navigate(['dashboard']);
-
+        this.toastr.success('Login Successful', 'You have logged in successfully');
       }, err => {
         console.log(err);
         this.toastr.error(err.message, err.name);
