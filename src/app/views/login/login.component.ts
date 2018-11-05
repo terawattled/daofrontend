@@ -8,6 +8,7 @@ import {EthereumService} from '../../ethereum.service';
 import {environment} from '../../../environments/environment';
 import {EtherscanService} from '../../etherscan.service';
 import {ToasterService} from '../../toaster.service';
+import {NgxSmartModalService} from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
     private usersApi: UsersApi,
     private ethereumService: EthereumService,
     private etherscanService: EtherscanService,
-    private toastr: ToasterService
+    private toastr: ToasterService,
+    public ngxSmartModalService: NgxSmartModalService
   ) {
     if (environment.production) {
       LoopBackConfig.setBaseURL('http://terawattdao.xyz:3000');
@@ -36,7 +38,6 @@ export class LoginComponent implements OnInit {
       LoopBackConfig.setBaseURL('http://localhost:3000');
     }
     LoopBackConfig.setApiVersion('api');
-
   }
 
   ngOnInit(): void {
@@ -46,6 +47,8 @@ export class LoginComponent implements OnInit {
     // this.etherscanService.getAccountBalance().subscribe(res => {
     //   console.log(res);
     // });
+    this.ngxSmartModalService.getModal('myModal').open(true);
+
   }
 
   private getNet(id: number): string {

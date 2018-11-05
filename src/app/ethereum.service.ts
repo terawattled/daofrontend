@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {fromPromise} from 'rxjs/internal-compatibility';
 import Web3 from 'web3';
 import * as bytes from 'bytes';
+import {NgxSmartModalService} from 'ngx-smart-modal';
 
 declare let require: any;
 const tokenAbi = require('./abi.json');
@@ -19,7 +20,7 @@ export class EthereumService implements OnInit {
   private mainAccount;
 
 
-  constructor(@Inject(WEB3) private web3: Web3) {
+  constructor(@Inject(WEB3) private web3: Web3, public ngxSmartModalService: NgxSmartModalService) {
     this._tokenContract = new this.web3.eth.Contract(tokenAbi, this._tokenContractAddress, {
       from: '0x2Ef01B493d2E9736Ad94dE246e3D3c9C8790dB1c',
       gas: 300000
@@ -44,6 +45,7 @@ export class EthereumService implements OnInit {
           console.log('This is the Kovan test network.');
           break;
         default:
+
           console.log('This is an unknown network.');
       }
     });

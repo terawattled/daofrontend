@@ -51,6 +51,7 @@ import {EthereumModule} from './ethereum/ethereum.module';
 import {NotificationsModule} from './views/notifications/notifications.module';
 import {NotificationsRoutingModule} from './views/notifications/notifications-routing.module';
 import {ToasterService} from './toaster.service';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 
 @NgModule({
   imports: [
@@ -71,7 +72,8 @@ import {ToasterService} from './toaster.service';
     SDKBrowserModule.forRoot(),
     EthereumModule,
     NotificationsModule,
-    NotificationsRoutingModule
+    NotificationsRoutingModule,
+    NgxSmartModalModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -90,7 +92,7 @@ import {ToasterService} from './toaster.service';
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
-    }, ApiService, AuthGuard, ToasterService],
+    }, ApiService, AuthGuard, ToasterService, NgxSmartModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

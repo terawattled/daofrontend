@@ -3,7 +3,8 @@
 
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
-
+/* You can add global styles to this file, and also import other style files */
+@import "~ngx-smart-modal/ngx-smart-modal";
 
 // if you'd like to use it without importing all of bootstrap it requires
 @import '~bootstrap/scss/functions';
