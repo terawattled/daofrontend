@@ -1,4 +1,4 @@
-# Terawatt Dao Frontend 
+# Terawatt Dao Frontend [![Build Status](https://travis-ci.com/terawattled/daofrontend.svg?branch=master)](https://travis-ci.com/terawattled/daofrontend)
 
 
 ## Table of Contents
