@@ -22,10 +22,10 @@
 
 ``` bash
 # clone the repo
-$ git clone https://github.com/coreui/coreui-free-angular-admin-template.git my-project
+$ git clone git@github.com:terawattled/daofrontend.git terawattdao
 
 # go into app's directory
-$ cd my-project
+$ cd terawattdao
 
 # install app's dependencies
 $ npm install
